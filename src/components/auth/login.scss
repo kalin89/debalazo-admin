@@ -1,0 +1,23 @@
+@import "../../styles/base/settings.scss";
+
+body {
+  background-color: white;
+}
+
+.login__form {
+  background-color: floralwhite;
+  text-align: center;
+  margin-top: 15%;
+  height: 350px;
+  border-radius: 50px;
+
+  h2 {
+    padding: 20px;
+  }
+}
+
+.request {
+  .buton-new {
+    padding: 10px;
+  }
+}
