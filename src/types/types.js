@@ -14,6 +14,7 @@ export const types = {
   requestPending: "[request] Get the counts oif the pending request",
 
   userSetDataModal: "[user] Set data in user modal",
+  userUpdateBusiness: "[user] Update id business in user",
   userClearDataModal: "[user] Clear data in user modal",
   userGetData: "[user] Get users from BD",
 

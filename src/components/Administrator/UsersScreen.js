@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { getDataUser } from "../../actions/user";
 import { columnUser } from "../../config/columUser";
 import { FormModal } from "../Administrator/FormModal";
+import {uiStartModalLoader } from "../../actions/ui";
+import {addNewBusiness} from '../../actions/business';
 
 export const UsersScreen = () => {
   const { users } = useSelector(
@@ -33,9 +35,8 @@ export const UsersScreen = () => {
   }
 
   const saveBusiness = (e) => {
-    
-    console.log(e);
-    console.log("Nuevo business");
+    dispatch(uiStartModalLoader());
+    dispatch(addNewBusiness(e));
   }
 
   const searchUser = (value) => {
@@ -61,17 +62,9 @@ export const UsersScreen = () => {
       <Form {...layout} form={form} onFinish={saveBusiness}>
             <Form.Item
               hidden={true}
-              label="key"
-              name="key"
+              label="idUser"
+              name="idUser"
               rules={[{ required: true, message: "El id es requerido" }]}
-            >
-              <Input type="hidden" />
-            </Form.Item>
-            <Form.Item
-              hidden={true}
-              label="email"
-              name="email"
-              rules={[{ required: true, message: "El email es requerido" }]}
             >
               <Input type="hidden" />
             </Form.Item>
@@ -98,13 +91,13 @@ export const UsersScreen = () => {
               ]}
             >
               <Select placeholder="Por favor seleccione una opción">
-                    <Option key={1} value={1}>
+                    <Option key={1} value={"Comida"}>
                       {"Comida"}
                     </Option>
-                    <Option key={2} value={2}>
+                    <Option key={2} value={"Eléctronica"}>
                       {"Eléctronica"}
                     </Option>
-                    <Option key={3} value={3}>
+                    <Option key={3} value={"Fruteria"}>
                       {"Fruteria"}
                     </Option>
               </Select>
@@ -139,11 +132,11 @@ export const UsersScreen = () => {
               </Form.Item>
               <Form.Item
               label="C.P"
-              name="postalcode"
+              name="postalCode"
               rules={[{ required: true, message: "La CP es requerido" }, {
-                max: 10,
-                message: "El télefono debe contener maximo 10 numero",
-              },]}
+                max: 5,
+                message: "El CP debe contener 5 numero",
+              },{min:5, message:"El CP debe contener 5 numero"}]}
             >
               <Input type="number" max={5} min={5} autoComplete="off" />
               </Form.Item>

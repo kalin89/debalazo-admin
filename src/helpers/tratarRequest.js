@@ -1,5 +1,4 @@
 export const tratarResponseRequest = (resp) => {
-  console.log(resp);
   return resp.map((e, i) => {
     return {
       key: e._id,

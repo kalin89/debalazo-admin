@@ -46,8 +46,8 @@ const RequestsScreen = () => {
 
   const saveRequest = async (e) => {
     if (e.key === undefined) {
-
-      dispatch(addNewRequest(e, requests[requests.length-1].no));
+      const contador = requests.length === 0 ? 0 : requests[requests.length-1].no;
+      dispatch(addNewRequest(e, contador));
     } else {
       let textStatus;
       status.forEach((s) => {

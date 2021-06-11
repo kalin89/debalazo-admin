@@ -22,6 +22,17 @@ export const userReducer = (state = initialState, action) => {
         ...state,
         dataModal: {},
       };
+      case types.userUpdateBusiness:
+        return {
+          ...state,
+          users: state.users.map((e) =>{
+            if(e.key === action.payload.idUser){
+              e.idBusiness = action.payload.idBusiness
+            }
+            return e;
+          }
+        ),
+        }
     default:
       return {
         ...state,

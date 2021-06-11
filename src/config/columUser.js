@@ -114,8 +114,7 @@ const ReturnBusinees = ({data, form}) => {
       dispatch(uiOpenModal());
       form.setFieldsValue({
         ...data,
-        id: data.key,
-        email: data.email
+        idUser: data.key,
       });
       console.log('Nuevo business con user id:' + data.key);
     } else {
