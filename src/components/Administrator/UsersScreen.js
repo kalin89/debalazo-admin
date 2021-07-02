@@ -101,7 +101,7 @@ export const UsersScreen = () => {
                       {"Fruteria"}
                     </Option>
                     <Option key={4} value={4}>
-                      {"Otro"}
+                      {"Otros"}
                     </Option>
               </Select>
             </Form.Item>
