@@ -91,14 +91,17 @@ export const UsersScreen = () => {
               ]}
             >
               <Select placeholder="Por favor seleccione una opción">
-                    <Option key={1} value={"Comida"}>
+                    <Option key={1} value={1}>
                       {"Comida"}
                     </Option>
-                    <Option key={2} value={"Eléctronica"}>
+                    <Option key={2} value={2}>
                       {"Eléctronica"}
                     </Option>
-                    <Option key={3} value={"Fruteria"}>
+                    <Option key={3} value={3}>
                       {"Fruteria"}
+                    </Option>
+                    <Option key={4} value={4}>
+                      {"Otro"}
                     </Option>
               </Select>
             </Form.Item>
