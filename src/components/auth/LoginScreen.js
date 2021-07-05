@@ -32,7 +32,7 @@ export const LoginScreen = () => {
     <Row>
       <Col span={12} offset={6}>
         <div className="login__form">
-          <h2>Iniciar sesión</h2>
+          <h2><span>De</span>Balazo</h2>
           <div className="__div1">
             <Form
               {...layout}
