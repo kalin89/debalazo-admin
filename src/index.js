@@ -5,13 +5,16 @@ import "./styles/styles.scss";
 import { AppRouter } from "./routes/AppRouter";
 import { Provider } from "react-redux";
 import { store } from "./store/store";
-import { Spin } from "antd";
+import SpinLoader from "./components/SpinLoader";
 
+console.log(store.getState());
+
+const showSpiner = false;
 ReactDOM.render(
   <Provider store={store}>
-    <Spin spinning={false} size="large" tip="Procesando">
-      <AppRouter />
-    </Spin>
+      <SpinLoader show={showSpiner} message="Procesando ...">
+          <AppRouter />
+      </SpinLoader>
   </Provider>,
   document.getElementById("root")
 );
