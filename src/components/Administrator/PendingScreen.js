@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 
-export const PendingScreen = () => {
+export const NotVerify = () => {
+    
   return (
     <div>
-      <h1>PendingScreen</h1>
+      <h1>Not Verifies Products Screen</h1>
     </div>
   );
 };
 
-export default PendingScreen;
+export default NotVerify;

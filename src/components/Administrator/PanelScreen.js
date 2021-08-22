@@ -54,7 +54,7 @@ const PanelScreen = () => {
             <span>Negocios</span>
           </Menu.Item>
           <Menu.Item key="4" Icon={<QuestionOutlined />}>
-            <Link to="/admin/pending" />
+            <Link to="/admin/not-verify" />
             <span>Pendientes</span>
           </Menu.Item>
         </Menu>
