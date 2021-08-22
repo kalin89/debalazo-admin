@@ -31,8 +31,9 @@ const PanelScreen = () => {
   };
   return (
     <Layout className="layout">
+      {/* Menú lateral de panel de administrador */}
       <Sider trigger={null} collapsible collapsed={collapsed}>
-        <div className="logo"></div>
+        <div className="logo">LOGO</div>
         <Menu theme="dark" selectedKeys={currentITem} onClick={menuClick}>
           <Menu.Item key="1" icon={<UserOutlined />}>
             <Link to="/admin/users" />
@@ -52,7 +53,7 @@ const PanelScreen = () => {
             <span>Negocios</span>
           </Menu.Item>
         </Menu>
-      </Sider>
+      </Sider> {/*Fin menú lateral */}
       <Layout>
         <Header className="menu-header">
           <Row>

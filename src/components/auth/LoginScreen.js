@@ -28,7 +28,7 @@ export const LoginScreen = () => {
 
   useEffect(() => {
     if(navigate){
-      history.push("admin")
+      history.push("admin/users")
     }
        
   }, [navigate]);

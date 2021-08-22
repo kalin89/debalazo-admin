@@ -7,7 +7,6 @@ import SpinLoader from "../components/SpinLoader"
 
 export const AppRouter = () => {
   const showSpiner = useSelector(state => state.ui.modalLoading);
-  console.log(showSpiner);
   return (
     <SpinLoader show={showSpiner} message="Procesando ...">
       <Router>

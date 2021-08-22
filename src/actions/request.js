@@ -37,6 +37,7 @@ const requestLoadCatalogStatus = (catalog) => ({
 
 export const addNewRequest = (request, lastCount) => {
   return async (dispatch) => {
+    dispatch(uiStartModalLoader());
     try {
       const resp = await fetchSinToken("api/RequestBusiness", request, "POST");
       const body = await resp.json();
@@ -44,6 +45,7 @@ export const addNewRequest = (request, lastCount) => {
         console.log(body);
         const newRequest = addNewDataToRequest(body.data, lastCount);
         dispatch(requestNewRequest(newRequest));
+        dispatch(uiEndModalLoader());
         dispatch(uiCloseModal());
         message.success("Solicitud agregada correctamente");
       } else {

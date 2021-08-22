@@ -28,6 +28,7 @@ export const UsersScreen = () => {
 
   useEffect(() => {
     dispatch(getDataUser());
+    
   }, [dispatch]);
 
   const formSubmit = ()=> {

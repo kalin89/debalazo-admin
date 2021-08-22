@@ -3,7 +3,7 @@ import React from 'react';
 const style = {
     width: "450px",
     height: "450px",
-    zIndex: "1",
+    zIndex: "9999",
 }
 const spinContainer = {
     width: "100%",
@@ -11,7 +11,7 @@ const spinContainer = {
     position: "absolute",
     backgroundColor: "rgba(255, 255, 255, 0.7)",
     backdropFilter: "blur(1px)",
-    zIndex: "10",
+    zIndex: "9999",
 }
 
 const spinLoader = {
