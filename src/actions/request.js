@@ -1,6 +1,6 @@
 import { types } from "../types/types";
 import { message } from "antd";
-import { uiCloseModal, uiEndModalLoader } from "./ui";
+import { uiCloseModal, uiEndModalLoader, uiStartModalLoader } from "./ui";
 import { fetchSinToken } from "../helpers/fetch";
 import { tratarResponseRequest, addNewDataToRequest } from "../helpers/tratarRequest";
 
@@ -55,6 +55,26 @@ export const addNewRequest = (request, lastCount) => {
     }
   };
 };
+
+export const loginRequest = (values) => {
+  return async (dispatch) => {
+    dispatch(uiStartModalLoader());
+    try {
+      const resp = await fetchSinToken("api/admin/sigin", values, "POST");
+      const body = await resp.json();
+      if (body.success) {
+        console.log(body);
+        sessionStorage.setItem('token', body.token);
+        sessionStorage.setItem('user', body.titleUser);
+      } else {
+        message.error(body.message);
+      }
+      dispatch(uiEndModalLoader());
+    } catch (error) {
+      console.log(error);
+    }
+  }
+}
 
 const requestNewRequest = (request) => ({
   type: types.requestNewRequest,

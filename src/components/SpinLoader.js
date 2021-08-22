@@ -1,8 +1,8 @@
 import React from 'react';
 
 const style = {
-    width: "150px",
-    height: "150px",
+    width: "450px",
+    height: "450px",
     zIndex: "1",
 }
 const spinContainer = {
@@ -16,14 +16,14 @@ const spinContainer = {
 
 const spinLoader = {
     position: "absolute",
-    top: "calc(50% - 75px)",
-    left: "calc(50% - 75px)",
+    top: "calc(50% - 225px)",
+    left: "calc(50% - 225px)",
     textAlign: "center",
     color: "#E97232",
 }
 
 const pStyle = {
-  margin: "-40px 0 0 0",
+  margin: "-180px 0 0 0",
   fontWeight: "700"
 }
 
@@ -35,9 +35,10 @@ function SpinLoader({ children, show, message }) {
         <div style={spinContainer}>
             <div style={spinLoader}>
                 <lottie-player 
-                    src="https://assets4.lottiefiles.com/packages/lf20_ro8p6e3m.json" 
+                    //src="https://assets4.lottiefiles.com/packages/lf20_ro8p6e3m.json" 
+                    src="https://assets10.lottiefiles.com/private_files/lf30_l4b43a03.json"
                     background="transparent" 
-                    speed="2" 
+                    speed="1" 
                     style={style}
                     loop
                     autoplay>

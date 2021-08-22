@@ -1,10 +1,16 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { Row, Col, Form, Input, Button, Checkbox } from "antd";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
+import { loginRequest } from "../../actions/request"
 
 import "./login.scss";
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 
 export const LoginScreen = () => {
+  const [navigate, setNavigate] = useState(false);
+  const dispatch = useDispatch();
+  const history = useHistory();
   const layout = {
     labelCol: {
       span: 5,
@@ -20,13 +26,24 @@ export const LoginScreen = () => {
     },
   };
 
+  useEffect(() => {
+    if(navigate){
+      history.push("admin")
+    }
+       
+  }, [navigate]);
+
+
   const onFinish = (values) => {
-    console.log("Success:", values);
+    dispatch(loginRequest(values));
+    setNavigate(true);
+    
   };
 
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);
   };
+
 
   return (
     <Row>
@@ -44,8 +61,8 @@ export const LoginScreen = () => {
               onFinishFailed={onFinishFailed}
             >
               <Form.Item
-                label="Username"
-                name="username"
+                label="E-mail"
+                name="email"
                 rules={[
                   {
                     required: true,
