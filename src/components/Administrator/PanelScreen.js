@@ -7,6 +7,7 @@ import {
   MenuUnfoldOutlined,
   MenuFoldOutlined,
   CloseOutlined,
+  QuestionOutlined,
 } from "@ant-design/icons";
 import "./panel.css";
 import "./admin.scss";
@@ -51,6 +52,10 @@ const PanelScreen = () => {
           <Menu.Item key="3" icon={<BankOutlined />}>
             <Link to="/admin/business" />
             <span>Negocios</span>
+          </Menu.Item>
+          <Menu.Item key="4" Icon={<QuestionOutlined />}>
+            <Link to="/admin/pending" />
+            <span>Pendientes</span>
           </Menu.Item>
         </Menu>
       </Sider> {/*Fin menú lateral */}
